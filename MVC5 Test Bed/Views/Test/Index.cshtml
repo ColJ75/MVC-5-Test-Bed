@@ -1,0 +1,18 @@
+﻿@model  MVC5TestBed.Models.EmployeeListView
+
+@{ ViewBag.Title = "Test View - Index"; }
+
+<h2>Hello @Model.UserName</h2>
+<table cellpadding="5" border="1">
+	<tr>
+		<th>Employee Name</th>
+		<th>Salary</th>
+	</tr>
+	@foreach (MVC5TestBed.Models.EmployeeView item in Model.Employees)
+	{
+	<tr>
+		<td>@item.EmployeeName</td>
+		<td style="text-align: right; background: @item.SalaryColor;">@item.Salary</td>
+	</tr>
+	}
+</table>
